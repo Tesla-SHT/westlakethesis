@@ -1,0 +1,52 @@
+
+\ctexset
+{
+    chapter =
+    {
+        format=\centering\sffamily\heiti\zihao{3},
+        nameformat={},
+        titleformat={},
+        name={第,章},
+        number=\arabic{chapter},
+        aftername=\hspace{1em},
+        beforeskip=0pt,
+        afterskip=0pt,
+    },
+    section =
+    {
+        format=\raggedright\sffamily\heiti\zihao{4},
+        name={},
+        aftername=\hspace{1em},
+        number=\thechapter.\arabic{section},
+        beforeskip=13pt,
+        afterskip=13pt
+    },
+    subsection =
+    {
+        format=\raggedright\sffamily\heiti\fontsize{13pt}{19.5pt}\selectfont,
+        name={},
+        aftername=\hspace{1em},
+        number=\thechapter.\arabic{section}.\arabic{subsection},
+        beforeskip=13pt,
+        afterskip=13pt
+    },
+    subsubsection =
+    {
+        format=\raggedright\sffamily\heiti\zihao{-4},
+        name={},
+        aftername=\hspace{1em},
+        numbering=true,
+        number=\thechapter.\arabic{section}.\arabic{subsection}.\arabic{subsubsection},
+        beforeskip=0pt,
+        afterskip=0pt
+    }
+}
+
+% Override bibliography heading for Westlake undergraduate:
+% Use chapter-level formatting (三号居中黑体) and add to TOC as chapter entry
+\ifthenelse{\equal{\Degree}{undergraduate}}
+{
+    \defbibheading{bibliography}[\bibname]{
+        \chapternonum{#1}
+    }
+}{}

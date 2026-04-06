@@ -1,0 +1,44 @@
+# GIT ARCHIVE EXPORT
+dist             export-ignore
+out              export-ignore
+out-ci           export-ignore
+.devcontainer    export-ignore
+.git             export-ignore
+.github          export-ignore
+*.ttf*           export-ignore
+*.ttc*           export-ignore
+.gitattributes   export-ignore
+docs/_config.yml export-ignore
+docs/index.md    export-ignore
+script/ci        export-ignore
+script/release   export-ignore
+
+# Text FILES
+*.tex   text eol=lf
+*.bib   text eol=lf
+*.md    text eol=lf
+*.sh    text eol=lf
+*.py    text eol=lf
+
+## GRAPHICS
+*.ai   binary
+*.bmp  binary
+*.eps  binary
+*.gif  binary
+*.ico  binary
+*.jng  binary
+*.jp2  binary
+*.jpg  binary
+*.jpeg binary
+*.jpx  binary
+*.jxr  binary
+*.pdf  binary
+*.png  binary
+*.psb  binary
+*.psd  binary
+*.svg  text
+*.svgz binary
+*.tif  binary
+*.tiff binary
+*.wbmp binary
+*.webp binary

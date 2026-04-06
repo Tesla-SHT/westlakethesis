@@ -1,0 +1,65 @@
+﻿% 参考文献库
+% 使用 BibLaTeX 格式，用 \cite{key} 在正文中引用
+% 运行 latexmk 会自动处理引用，无需手动运行 bibtex
+
+% -----------------------------------------------------------------------
+% 常用期刊缩写（可在引用时用 journal = CVPR 等）
+% -----------------------------------------------------------------------
+@String(PAMI  = {IEEE Trans. Pattern Anal. Mach. Intell.})
+@String(IJCV  = {Int. J. Comput. Vis.})
+@String(CVPR  = {IEEE Conf. Comput. Vis. Pattern Recog.})
+@String(ICCV  = {Int. Conf. Comput. Vis.})
+@String(ECCV  = {Eur. Conf. Comput. Vis.})
+@String(NeurIPS = {Adv. Neural Inform. Process. Syst.})
+@String(ICLR  = {Int. Conf. Learn. Represent.})
+@String(ICML  = {Int. Conf. Mach. Learn.})
+@String(TOG   = {ACM Trans. Graph.})
+@String(TIP   = {IEEE Trans. Image Process.})
+
+% -----------------------------------------------------------------------
+% 示例引用条目（请替换为你自己的参考文献）
+% -----------------------------------------------------------------------
+
+% 期刊论文示例
+@article{sample-article,
+    author    = {作者一 and 作者二 and 作者三},
+    title     = {论文题目},
+    journal   = {期刊名称},
+    year      = {2024},
+    volume    = {1},
+    number    = {1},
+    pages     = {1--10},
+}
+
+% 会议论文示例
+@inproceedings{sample-conference,
+    author    = {Author One and Author Two},
+    title     = {Conference Paper Title},
+    booktitle = CVPR,
+    year      = {2024},
+    pages     = {1--10},
+}
+
+% 图书示例
+@book{sample-book,
+    author    = {作者姓名},
+    title     = {书名},
+    publisher = {出版社},
+    year      = {2023},
+}
+
+% 网络资源示例
+@online{sample-online,
+    author = {作者姓名},
+    title  = {网页标题},
+    year   = {2024},
+    url    = {https://example.com},
+}
+
+% tikz 宏包（模板示例代码中使用）
+@online{tikz,
+    title  = {The TikZ and PGF packages},
+    author = {Till Tantau},
+    year   = {2023},
+    url    = {https://github.com/pgf-tikz/pgf},
+}

@@ -1,0 +1,79 @@
+\cleardoublepage{}
+
+\hskip 40mm
+
+\begin{center}
+    \includegraphics[width=0.333\paperwidth]{logo/westlake.pdf}
+\end{center}
+
+\vskip 40pt
+
+\begin{center}
+    \zihao{2} \songti
+    \ifthenelse{\equal{\Type}{thesis}}
+    {
+        本~科~生~毕~业~论~文
+        \\
+        文~献~综~述~和~开~题~报~告
+    }
+    {
+        本~科~生~毕~业~设~计
+        \\
+        文~献~综~述~和~开~题~报~告
+    }
+\end{center}
+
+\vskip 40pt
+
+% Define multi line title
+\ifthenelse{\equal{\TitleLines}{1}}
+{
+    % TitleLines == 1
+    \providecommand{\CoverTitle}{}
+    \renewcommand{\CoverTitle}{
+        \Title{} \\
+    }
+}
+{
+    % TitleLines == 2
+    \providecommand{\CoverTitle}{}
+    \renewcommand{\CoverTitle}{
+        \TitleLineOne{} \\
+        \TitleLineTwo{} \\
+    }
+}
+
+\begin{center}
+    \zihao{1} \heiti
+    \CoverTitle
+\end{center}
+
+\vskip 40pt
+
+\ifthenelse{\equal{\BlindReview}{true}}
+{
+    % in blind review
+    \begin{center}
+        \zihao{3}
+        \begin{tabularx}{.7\textwidth}{>{\fangsong\bfseries}l >{\normalfont\fangsong}X}
+            学\hfill 院：&  \uline{\hfill} \\
+            专\hfill 业： & \uline{\hfill} \\
+            学生姓名：& \uline{\hfill} \\
+            学\hfill 号：  & \uline{\hfill} \\
+            论文导师：& \uline{\hfill} \\
+        \end{tabularx}
+    \end{center}
+}
+{
+    % not in blind review
+    \begin{center}
+        \zihao{3}
+        \begin{tabular}{>{\fangsong\bfseries}l >{\normalfont\fangsong}l}
+            学\hfill 院：    &  \Department \\
+            专\hfill 业： & \Major \\
+            学生姓名：   & \StudentName \\
+            学\hfill 号：   & \StudentID \\
+            论文导师：   & \AdvisorName \\
+        \end{tabular}
+    \end{center}
+}

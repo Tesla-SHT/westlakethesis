@@ -1,0 +1,88 @@
+\thispagestyle{empty}
+\setcounter{page}{-1}
+
+\begin{flushright}
+    {\zihao{-4} 单位代码：14626 \\ 学号：\StudentID}
+\end{flushright}
+
+\vskip 10mm
+
+\begin{center}
+    \includegraphics[width=0.333\paperwidth]{logo/westlake.pdf}
+\end{center}
+
+\vskip 10pt
+
+\begin{center}
+    \zihao{2} \songti
+    \ifthenelse{\equal{\Type}{thesis}}
+    {
+        本~科~毕~业~论~文（设~计）
+    }
+    {
+        本~科~毕~业~设~计
+    }
+\end{center}
+
+\vskip 20pt
+
+% Define multi line title
+\ifthenelse{\equal{\TitleLines}{1}}
+{
+    % TitleLines == 1
+    \providecommand{\CoverTitle}{}
+    \renewcommand{\CoverTitle}{
+        \begin{center}
+            \zihao{1} \heiti \Title{}
+        \end{center}
+    }
+}
+{
+    % TitleLines == 2
+    \providecommand{\CoverTitle}{}
+    \renewcommand{\CoverTitle}{
+        \begin{center}
+            \zihao{1} \heiti
+            \TitleLineOne{} \\
+            \TitleLineTwo{}
+        \end{center}
+    }
+}
+
+\CoverTitle
+
+\vskip 40pt
+
+\ifthenelse{\equal{\BlindReview}{true}}
+{
+    % in blind review
+    \begin{center}
+        \zihao{3}
+        \begin{tabular}{>{\fangsong\bfseries}l >{\normalfont\fangsong}l}
+            学\hfill 院：    &  \uline{\hfill\hspace{10em}\hfill} \\
+            专\hfill 业：    &  \uline{\hfill\hspace{10em}\hfill} \\
+            作者姓名：       &  \uline{\hfill\hspace{10em}\hfill} \\
+            论文导师：       &  \uline{\hfill\hspace{10em}\hfill} \\
+        \end{tabular}
+    \end{center}
+}
+{
+    % not in blind review
+    \begin{center}
+        \zihao{3}
+        \begin{tabular}{>{\fangsong\bfseries}l >{\normalfont\fangsong}l}
+            学\hfill 院：    &  \Department \\
+            专\hfill 业：    &  \Major \\
+            作者姓名：       &  \StudentName \\
+            论文导师：       &  \AdvisorName \\
+        \end{tabular}
+    \end{center}
+}
+
+\vfill
+
+\begin{center}
+    \zihao{3} \songti \SubmitDate
+\end{center}
+
+\vskip 20pt

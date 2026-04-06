@@ -1,0 +1,30 @@
+% ============================================================
+% 附录（如有）
+% 格式要求（2025版）：
+%   "附录"标题：三号居中黑体（由 \chapternonum 自动生成）
+%   附录编号：依顺序用大写字母 A, B, C...（附录A, 附录B, 附录C）
+%   附录小节标题：四号居左黑体（由 \section 自动生成）
+%   正文格式：与正文段落文字要求相同
+%     （小四号字，宋体，Times New Roman英文，两端对齐，首行缩进2汉字符）
+% ============================================================
+\cleardoublepage
+
+{
+    \chapternonum{附录}
+
+    \appendixsubsecmajornumbering
+
+    % 【每个附录用 \section 独立标注，格式：附录X 附录标题】
+    \section{附录A\hspace{1em}附录标题}
+
+    % 附录内容与正文段落要求相同。
+    附录内容……
+
+    \section{附录B\hspace{1em}附录标题}
+
+    % 附录内容与正文段落要求相同。
+    附录内容……
+
+    % End of appendix
+    \removeappendixsubsecmajornumbering
+}

@@ -1,0 +1,104 @@
+% ============================================================
+% 正文示例章节（请将本文件内容替换为你自己的论文正文）
+% ============================================================
+\chapter{模板使用说明}
+
+% 【说明】本章展示模板的常见使用方式，依据2025版编写指南编写。
+% 请将本文件中所有示例内容替换为你自己的论文正文。
+
+\section{基本排版规范}
+
+\subsection{正文字体与段落}
+
+正文采用小四号（12pt）字，汉字用宋体，英文和数字用 Times New Roman 体，两端对齐，段落首行左缩进2个汉字符，1.5倍行间距。以上格式由模板自动设置，写作时无需手动指定。
+
+\subsection{标题层级}
+
+本模板支持四级标题，格式由模板自动完成：
+
+\begin{itemize}
+    \item \textbf{章标题}：三号黑体，居中（\verb|\chapter{标题}|）
+    \item \textbf{一级节标题}：四号黑体，居左（\verb|\section{标题}|）
+    \item \textbf{二级节标题}：13pt 黑体，居左（\verb|\subsection{标题}|）
+    \item \textbf{三级节标题}：小四号黑体，居左（\verb|\subsubsection{标题}|）
+\end{itemize}
+
+建议正文层级不超过三级节标题（即 \verb|\subsubsection|）。
+
+\subsubsection{三级节标题示例}
+
+三级节标题也可在必要时使用。
+
+\section{图、表与公式}
+
+\subsection{插图}
+
+图题置于图片下方，使用 \verb|\caption| 命令，如\autoref{fig:sample-figure}所示。
+图片文件建议放在 \texttt{figure/} 目录下。
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=.4\linewidth]{example-image}% 替换为你的图片路径，例如 figure/your-image.png
+    \caption{\label{fig:sample-figure}图片示例（请替换为实际图片）}
+\end{figure}
+
+\subsection{表格}
+
+表题置于表格上方，使用 \verb|\caption| 命令，如\autoref{tab:sample}所示。
+
+\begin{table}[ht]
+    \caption{\label{tab:sample}自动调节列宽的表格示例}
+    \begin{tabularx}{\linewidth}{|c|X<{\centering}|}
+        \hline
+        第一列 & 第二列 \\ \hline
+        示例内容 & 示例内容 \\ \hline
+        示例内容 & 示例内容 \\ \hline
+    \end{tabularx}
+\end{table}
+
+\subsection{公式}
+
+公式使用 \texttt{equation} 环境，如\autoref{equ:sample}所示。
+
+\begin{equation}
+    \label{equ:sample}
+    E = mc^2
+\end{equation}
+
+\section{代码示例}
+
+如需插入代码，使用 \texttt{lstlisting} 环境，如下所示。
+
+\begin{lstlisting}[%
+    language={C},
+    caption={示例代码},
+    label={code:sample}
+]
+#include <stdio.h>
+
+int main(void)
+{
+    printf("Hello, Westlake University!\n");
+    return 0;
+}
+\end{lstlisting}
+
+\section{引用}
+
+\subsection{文献引用}
+
+使用 \verb|\cite{key}| 引用参考文献，例如：某某研究\cite{sample-article}表明……
+
+参考文献条目在 \texttt{body/ref.bib} 文件中以 BibTeX 格式维护。
+
+\subsection{图、表、公式的交叉引用}
+
+使用 \verb|\autoref{label}| 进行交叉引用，模板已预设中文名称（图、表、式等）。
+
+\section{脚注}
+
+脚注内容采用小五号字\footnote{这是一个脚注示例。中文用宋体，英文和数字用 Times New Roman 体。}。
+
+\chapternonum{同一页上的章标题}
+
+\verb|\chapternonum{...}| 用于生成不带编号的章级标题（如参考文献、致谢等），该命令同时将其加入目录并设置篇眉。
