@@ -9,12 +9,17 @@
 \documentclass[
     PrintFilePath   = false,    % true: print source .tex path on each page margin
     TwoSide         = true,     % true: blank pages before new chapters (for printing)
+    SchoolCode      = 14626,                % 西湖大学单位代码
     StudentName     = 张三,                 % 填写你的姓名
+    StudentNameEng  = Zhang~San,            % 填写你的英文/拼音姓名，空格请写作 ~
     StudentID       = 20XX0000000,          % 填写你的学号
     AdvisorName     = 导师姓名~职称,        % 例如：李四~副教授
+    AdvisorNameEng  = Advisor~Name,         % 例如：Li~Si~Professor
     Grade           = 20XX,                 % 入学年份，例如：2022
     Major           = 你的专业,             % 例如：计算机科学与技术
+    MajorEng        = Your~Major,           % 例如：Computer~Science~and~Technology
     Department      = 你的学院,             % 例如：工学院
+    DepartmentEng   = Your~School,          % 例如：School~of~Engineering
     Degree          = undergraduate,        % 本科生模板（当前唯一支持选项）
     Type            = thesis,               % thesis（论文类）or design（设计类）
     Period          = final,                % proposal（开题报告）or final（毕业论文）
@@ -25,18 +30,19 @@
     ClassNumber     = 按中国图书分类法，学位办网上可查,
     Security        = 无,
     SubmitDate      = 二〇二六年六月,          % 封面日期，例如：二〇二六年六月
+    SubmitDateEng   = June~20XX,            % 英文封面日期，例如：June~2026
     ListOfContents  = true,
     ListOfFigures   = true,
     ListOfTables    = true,
     ListOfAlgorithms= false,
     Title           = 论文题目,             % 中文题目
-    TitleEng        = {Your Thesis Title},  % 英文题目
+    TitleEng        = {Your~Thesis~Title},  % 英文题目，空格请写作 ~
 ]{westlakethesis}
 
 %% Uncomment the following lines if you need multi line titles on cover pages
-\titletwolines{利用单细胞多组学分析}{XXXXX的异质性}
-% \titleengtwolines{Interrogating the Heterogeneity XXXXX}{with Single-cell Multi-omics Analysis}
-% \titlethreelines{毕业论文题目第一行}{毕业论文题目第二行}{毕业论文题目第三行}
+% \titletwolines{中文题目第一行}{中文题目第二行}
+% \titleengtwolines{English Title Line One}{English Title Line Two}
+% \titlethreelines{中文题目第一行}{中文题目第二行}{中文题目第三行}
 % \titleengthreelines{English Title Line One}{English Title Line Two}{English Title Line Three}
 
 %% Uncomment the following lines if you need multi line major names on cover pages
@@ -56,6 +62,7 @@
         
         \coverstyle
         \inputpage{final}{cover}
+        \inputpage{final}{english-cover}
 
         \prevstyle
         \inputpage{final}{previous}
@@ -117,6 +124,7 @@
         
         \coverstyle
         \inputpage{final}{cover}
+        \inputpage{final}{english-cover}
 
         \prevstyle
         \inputpage{final}{previous}

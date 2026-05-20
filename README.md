@@ -41,6 +41,8 @@ body/
         original.tex        ← 开题报告：外文原文（PDF嵌入）
 figure/                     ← 图片目录（将图片放在此处引用）
 attachment/                 ← 学校官方表格（任务书、评阅表等）
+page/undergraduate/final/
+  english-cover.tex         ← 毕业论文：英文封面（由 westlakethesis.tex 字段自动生成）
 ```
 
 ---
@@ -53,15 +55,22 @@ attachment/                 ← 学校官方表格（任务书、评阅表等）
 
 ```latex
 StudentName  = 你的姓名,
+StudentNameEng = Zhang~San,       % class option 中英文空格请写作 ~
 StudentID    = 你的学号,
 AdvisorName  = 导师姓名~职称,   % 例如：李四~副教授
+AdvisorNameEng = Advisor~Name,
 Grade        = 20XX,            % 入学年份
 Major        = 你的专业,
+MajorEng     = Your~Major,
 Department   = 你的学院,
+DepartmentEng = Your~School,
 Title        = 论文中文题目,
-TitleEng     = {Your Thesis Title in English},
+TitleEng     = {Your~Thesis~Title~in~English},
 SubmitDate   = 二〇二六年六月,  % 封面日期
+SubmitDateEng = June~20XX,      % 英文封面日期
 ```
+
+最终论文模式（`Period = final` 或 `Period = paper`）会在中文封面后自动生成英文封面；英文封面使用 `StudentNameEng`、`AdvisorNameEng`、`MajorEng`、`DepartmentEng`、`TitleEng` 和 `SubmitDateEng`。
 
 ### 第二步：选择编译模式
 

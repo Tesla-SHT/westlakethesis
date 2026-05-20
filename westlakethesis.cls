@@ -10,17 +10,23 @@
     prefix=
 }
 \DeclareStringOption{ClassNumber}
+\DeclareStringOption[14626]{SchoolCode}
 \DeclareStringOption{Security}
 \DeclareStringOption{StudentName}
+\DeclareStringOption{StudentNameEng}
 \DeclareStringOption{StudentID}
 \DeclareStringOption{AdvisorName}
+\DeclareStringOption{AdvisorNameEng}
 \DeclareStringOption{Grade}
 \DeclareStringOption{Major}
+\DeclareStringOption{MajorEng}
 \DeclareStringOption{Department}
+\DeclareStringOption{DepartmentEng}
 \DeclareStringOption{Topic}
 \DeclareStringOption{Title}
 \DeclareStringOption{TitleEng}
 \DeclareStringOption{SubmitDate}
+\DeclareStringOption{SubmitDateEng}
 \DeclareStringOption[undergraduate]{Degree}
 \DeclareStringOption[general]{MajorFormat}
 \DeclareStringOption[thesis]{Type}
@@ -60,6 +66,10 @@
     }{ctexrep}
 }
 {}
+
+\makeatletter
+\let\@classoptionslist\@empty
+\makeatother
 
 \LoadClass[
     zihao=-4,

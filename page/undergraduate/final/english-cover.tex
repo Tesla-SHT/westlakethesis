@@ -1,0 +1,81 @@
+\clearpage
+\thispagestyle{empty}
+
+\begin{flushright}
+    {\zihao{-4} School Code: \SchoolCode \\ Student ID: \StudentID}
+\end{flushright}
+
+\vskip 18mm
+
+\begin{center}
+    \includegraphics[width=0.333\paperwidth]{logo/westlake.pdf}
+\end{center}
+
+\vskip 24pt
+
+\begin{center}
+    \sffamily\bfseries\zihao{2}
+    \ifthenelse{\equal{\TitleEngLines}{1}}
+    {
+        \TitleEng{}
+    }
+    {
+        \ifthenelse{\equal{\TitleEngLines}{2}}
+        {
+            \TitleEngLineOne{}\\
+            \TitleEngLineTwo{}
+        }
+        {
+            \TitleEngLineOne{}\\
+            \TitleEngLineTwo{}\\
+            \TitleEngLineThree{}
+        }
+    }
+\end{center}
+
+\vskip 24pt
+
+\begin{center}
+    \sffamily\zihao{3}
+    \ifthenelse{\equal{\Type}{thesis}}
+    {
+        (Undergraduate Thesis)
+    }
+    {
+        (Undergraduate Design)
+    }
+\end{center}
+
+\vskip 42pt
+
+\ifthenelse{\equal{\BlindReview}{true}}
+{
+    \begin{center}
+        \zihao{3}
+        \begin{tabular}{>{\sffamily\bfseries}r >{\normalfont\sffamily}l}
+            School:     & \uline{\hfill\hspace{13em}\hfill} \\
+            Major:      & \uline{\hfill\hspace{13em}\hfill} \\
+            Candidate:  & \uline{\hfill\hspace{13em}\hfill} \\
+            Supervisor: & \uline{\hfill\hspace{13em}\hfill} \\
+        \end{tabular}
+    \end{center}
+}
+{
+    \begin{center}
+        \zihao{3}
+        \begin{tabular}{>{\sffamily\bfseries}r >{\normalfont\sffamily}l}
+            School:     & \DepartmentEng \\
+            Major:      & \MajorEng \\
+            Candidate:  & \StudentNameEng \\
+            Supervisor: & \AdvisorNameEng \\
+        \end{tabular}
+    \end{center}
+}
+
+\vfill
+
+\begin{center}
+    \sffamily\zihao{3} \SubmitDateEng
+\end{center}
+
+\vskip 20pt
