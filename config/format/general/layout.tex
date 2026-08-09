@@ -7,7 +7,7 @@
 
 % Enable subsubsection's numbering
 \setcounter{secnumdepth}{3}
-\setcounter{tocdepth}{2}
+\setcounter{tocdepth}{3}
 
 % Cover
 \fancypagestyle{cover}
@@ -24,7 +24,7 @@
     \newcommand{\commonhead}
     {
         \fancyhead{}
-        % \fancyhead[C]{\zihao{-5} \songti \leftmark}  % 篇眉：暂时注释掉
+        \fancyhead[C]{\zihao{-5} \songti \leftmark}  % 篇眉：五号字居中，中文宋体
         \renewcommand{\headrulewidth}{0pt}  % 去掉页眉横线
     }
     % Common page header & footer
@@ -129,7 +129,7 @@
 % TOC entry format
 \cftpagenumbersoff{part}
 
-\renewcommand{\cftchapfont}         {\zihao{-4}\sffamily\heiti}
+\renewcommand{\cftchapfont}         {\zihao{-4}\heiti}
 \renewcommand{\cftchapleader}       {\cftdotfill{\cftchapdotsep}}
 \renewcommand{\cftchappagefont}     {}
 \renewcommand{\cftsecfont}          {\zihao{-4}\songti}

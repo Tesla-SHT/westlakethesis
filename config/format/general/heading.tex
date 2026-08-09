@@ -10,36 +10,38 @@
         },
         chapter =
         {
-            format=\centering\zihao{3}\bfseries,
-            name={,、},
-            aftername=,
-            number=\chinese{chapter},
+            format=\centering\zihao{3}\heiti\bfseries,
+            name={第,章},
+            aftername=\hspace{1em},
+            number=\arabic{chapter},
             beforeskip=12pt,
             afterskip=6pt
         },
         section =
         {
-            format=\raggedright\zihao{3}\bfseries,
+            format=\raggedright\zihao{4}\heiti\bfseries,
             name={},
-            number=\arabic{section},
+            aftername=\hspace{1em},
+            number=\arabic{chapter}.\arabic{section},
             beforeskip=13pt,
             afterskip=13pt
         },
         subsection =
         {
-            format=\raggedright\zihao{-3}\bfseries,
+            format=\raggedright\fontsize{13pt}{13pt}\heiti\bfseries,
             name={},
-            number=\arabic{section}.\arabic{subsection},
+            aftername=\hspace{1em},
+            number=\arabic{chapter}.\arabic{section}.\arabic{subsection},
             beforeskip=13pt,
             afterskip=13pt
         },
         subsubsection =
         {
-            format=\raggedright\zihao{4}\bfseries,
+            format=\raggedright\zihao{-4}\heiti\bfseries,
             name={},
-            aftername=~,
+            aftername=\hspace{1em},
             numbering=true,
-            number=\arabic{section}.\arabic{subsection}.\arabic{subsubsection},
+            number=\arabic{chapter}.\arabic{section}.\arabic{subsection}.\arabic{subsubsection},
             beforeskip=0pt,
             afterskip=0pt
         }
@@ -114,8 +116,7 @@
 \ifthenelse{\equal{\Degree}{undergraduate}}
 {
     \defbibheading{bibliography}[\bibname]{
-        \section{#1}
-        \markboth{#1}{#1}
+        \chapternonum{#1}
     }
 }
 {

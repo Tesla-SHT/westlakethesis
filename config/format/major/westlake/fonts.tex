@@ -14,9 +14,29 @@
     }
 }
 {
-    % Windows or other platform
-    \setCJKmainfont[AutoFakeBold={\FakeBoldSize}]{SimSun}
+    \IfFontExistsTF{SimSun}
+    {
+        % Windows
+        \setCJKmainfont[AutoFakeBold={\FakeBoldSize}]{SimSun}
+    }
+    {
+        % TeX Live / Overleaf fallback
+        \setCJKmainfont[AutoFakeBold={\FakeBoldSize}]{FandolSong-Regular.otf}
+    }
 }
 
-\setsansfont{Arial}
-\setCJKsansfont{SimHei}
+\IfFontExistsTF{Arial}
+{
+    \setsansfont{Arial}
+}
+{
+    \setsansfont{TeX Gyre Heros}
+}
+
+\IfFontExistsTF{SimHei}
+{
+    \setCJKsansfont{SimHei}
+}
+{
+    \setCJKsansfont[AutoFakeBold={\FakeBoldSize}]{FandolHei-Regular.otf}
+}

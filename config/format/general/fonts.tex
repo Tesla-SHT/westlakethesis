@@ -22,7 +22,7 @@
     \setCJKfamilyfont{zhkai}  {Kaiti SC}        [BoldFont={Kaiti SC Bold}]
     \setCJKfamilyfont{zhsong} {Songti SC Light} [BoldFont={Songti SC Bold}]
     
-    \setCJKmainfont[AutoFakeBold={\FakeBoldSize}]{STFangsong}
+    \setCJKmainfont[AutoFakeBold={\FakeBoldSize},BoldFont={Songti SC Bold}]{Songti SC Light}
 }
 {
     % Older MacOS
@@ -32,18 +32,45 @@
     \setCJKfamilyfont{zhkai}  {STKaiti}    [AutoFakeBold={\FakeBoldSize}]
     \setCJKfamilyfont{zhsong} {STSong}     [AutoFakeBold={\FakeBoldSize}]
 
-    \setCJKmainfont[AutoFakeBold={\FakeBoldSize}]{STFangsong}
+    \setCJKmainfont[AutoFakeBold={\FakeBoldSize}]{STSong}
 }
 }
 {
-    % Windows or other platform
-    \setCJKfamilyfont{zhfs}   {FangSong} [AutoFakeBold={\FakeBoldSize}]
-    \setCJKfamilyfont{zhhei}  {SimHei}   [AutoFakeBold={\FakeBoldSize}]
-    \setCJKfamilyfont{zhkai}  {KaiTi}    [AutoFakeBold={\FakeBoldSize}]
-    \setCJKfamilyfont{zhsong} {SimSun}   [AutoFakeBold={\FakeBoldSize}]
+    \IfFontExistsTF{FangSong}
+    {
+        % Windows
+        \setCJKfamilyfont{zhfs}   {FangSong} [AutoFakeBold={\FakeBoldSize}]
+        \setCJKfamilyfont{zhhei}  {SimHei}   [AutoFakeBold={\FakeBoldSize}]
+        \setCJKfamilyfont{zhkai}  {KaiTi}    [AutoFakeBold={\FakeBoldSize}]
+        \setCJKfamilyfont{zhsong} {SimSun}   [AutoFakeBold={\FakeBoldSize}]
 
-    \setCJKmainfont[AutoFakeBold={\FakeBoldSize}]{FangSong}
+        \setCJKmainfont[AutoFakeBold={\FakeBoldSize}]{SimSun}
+    }
+    {
+        % TeX Live / Overleaf fallback
+        \setCJKfamilyfont{zhfs}   {FandolFang-Regular.otf} [AutoFakeBold={\FakeBoldSize}]
+        \setCJKfamilyfont{zhhei}  {FandolHei-Regular.otf}  [AutoFakeBold={\FakeBoldSize}]
+        \setCJKfamilyfont{zhkai}  {FandolKai-Regular.otf}  [AutoFakeBold={\FakeBoldSize}]
+        \setCJKfamilyfont{zhsong} {FandolSong-Regular.otf} [AutoFakeBold={\FakeBoldSize}]
+
+        \setCJKmainfont[AutoFakeBold={\FakeBoldSize}]{FandolSong-Regular.otf}
+    }
 }
 
-\setmainfont{Times New Roman}
+\IfFontExistsTF{Times New Roman}
+{
+    \setmainfont{Times New Roman}
+}
+{
+    \setmainfont{TeX Gyre Termes}
+}
+
+\IfFontExistsTF{Arial}
+{
+    \newfontfamily\Arial{Arial}
+}
+{
+    \newfontfamily\Arial{TeX Gyre Heros}
+}
+
 \renewcommand{\bibfont}{\zihao{5}\songti}
